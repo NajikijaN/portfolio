@@ -229,6 +229,7 @@ main {
         radial-gradient(circle at top right, rgba(196, 29, 85, 0.14), transparent 30%),
         linear-gradient(180deg, rgba(12, 12, 14, 0.98), rgba(18, 5, 11, 0.92));
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+    transform: rotateY(30deg) rotateX(30deg);
 }
 
 .ide-topbar {
@@ -261,7 +262,8 @@ main {
 }
 
 .ide-body {
-    @apply grid grid-cols-[220px_minmax(0,1fr)_320px];
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
     min-height: 28rem;
 }
 
@@ -277,24 +279,6 @@ main {
 .ide-number {
     @apply text-right text-sm;
     color: rgba(148, 163, 184, 0.45);
-}
-
-.ide-code {
-    @apply text-sm leading-7;
-    font-family: Consolas, 'Courier New', monospace;
-    color: #e2e8f0;
-}
-
-.ide-accent {
-    color: #f472b6;
-}
-
-.ide-attribute {
-    color: #7dd3fc;
-}
-
-.ide-string {
-    color: #86efac;
 }
 
 .contact-container {
@@ -473,6 +457,11 @@ footer {
 
     .ide-tab {
         font-size: 0.8rem;
+    }
+
+    .ide-dot-row {
+        --dot-gap: 0.42rem;
+        --dot-size: 0.28rem;
     }
 
     .ide-preview-hero strong {

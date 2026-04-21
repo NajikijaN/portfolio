@@ -21,35 +21,31 @@
         </div>
         --}}
 
-        <div>
+        <div class="w-2xl">
             <div class="ide-visual" aria-hidden="true">
-            <div class="ide-topbar">
-                <div class="ide-dots">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div class="ide-topbar">
+                    <div class="ide-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="ide-body">
+                    <div class="ide-editor">
+                        <div class="ide-line"><span class="ide-number">1</span></div>
+                        <div class="ide-line"><span class="ide-number">2</span></div>
+                        <div class="ide-line"><span class="ide-number">3</span></div>
+                        <div class="ide-line"><span class="ide-number">4</span></div>
+                        <div class="ide-line"><span class="ide-number">5</span></div>
+                        <div class="ide-line"><span class="ide-number">6</span></div>
+                        <div class="ide-line"><span class="ide-number">7</span></div>
+                        <div class="ide-line"><span class="ide-number">8</span></div>
+                        <div class="ide-line"><span class="ide-number">9</span></div>
+                        <div class="ide-line"><span class="ide-number">10</span></div>
+                        <div class="ide-line"><span class="ide-number">11</span></div>
+                    </div>
                 </div>
             </div>
-            <div class="ide-body">
-                <div class="ide-editor">
-                    <div class="ide-line"><span class="ide-number">1</span><span class="ide-code"><span
-                                class="ide-accent">&lt;section&gt;</span></span></div>
-                    <div class="ide-line"><span class="ide-number">2</span><span class="ide-code"> <span
-                                class="ide-accent">&lt;div</span> <span class="ide-attribute">class</span>=<span
-                                class="ide-string">"hero"</span><span class="ide-accent">&gt;</span></span></div>
-                    <div class="ide-line"><span class="ide-number">3</span><span class="ide-code"> <span
-                                class="ide-accent">&lt;h1&gt;</span>Crafting fast, polished websites<span
-                                class="ide-accent">&lt;/h1&gt;</span></span></div>
-                    <div class="ide-line"><span class="ide-number">4</span><span class="ide-code"> <span
-                                class="ide-accent">&lt;p&gt;</span>Frontend feel, backend logic.<span
-                                class="ide-accent">&lt;/p&gt;</span></span></div>
-                    <div class="ide-line"><span class="ide-number">5</span><span class="ide-code"> <span
-                                class="ide-accent">&lt;/div&gt;</span></span></div>
-                    <div class="ide-line"><span class="ide-number">6</span><span class="ide-code"><span
-                                class="ide-accent">&lt;/section&gt;</span></span></div>
-                </div>
-            </div>
-        </div>
         </div>
         
     </header>
