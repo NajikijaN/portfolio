@@ -9,3 +9,495 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+:root {
+    --primary-color: #c41d55;
+}
+
+* {
+    font-family: var(--font-sans);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 300;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, #BDBDBD, var(--primary-color), #BDBDBD);
+    background-size: 200% 100%;
+    background-position: 0% 50%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 4s infinite linear alternate;
+}
+
+@keyframes glow {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+section {
+    margin: 5rem 0;
+}
+
+body {
+    @apply text-slate-200;
+    background: radial-gradient(at center bottom, #010101, #1a030a);
+    margin: 0 10rem;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+
+header h1 {
+    position: relative;
+    font-size: 3rem;
+    font-weight: 350;
+    border-bottom: 5px solid #fff;
+    outline-offset: 15px;
+    margin-bottom: 1rem;
+}
+
+header h1::after {
+    content: 'Kijan';
+    position: absolute;
+    left: 0;
+    top: -10rem;
+    width: 100%;
+    font-size: 10rem;
+    color: #fff;
+    opacity: 0.05;
+    font-weight: 600;
+    z-index: 0;
+    line-height: 0.75;
+}
+
+header p {
+    font-size: 1.5rem;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 16px;
+    backdrop-filter: blur(1px);
+    z-index: 1;
+}
+
+.hero-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(45deg, #BDBDBD, #1a030a);
+    border-radius: 100%;
+    z-index: -1;
+    font-size: 25rem;
+    filter: blur(250px);
+}
+
+main {
+    height: 100vh;
+}
+
+.container {
+    @apply flex gap-4 mb-50 flex-col items-start;
+}
+
+.container h2 {
+    @apply text-5xl mb-8;
+    border-left: 5px solid var(--primary-color);
+    padding: 0.5rem 1rem;
+}
+
+.container p {
+    @apply text-lg flex justify-between;
+    max-width: 70ch;
+    line-height: 1.8;
+}
+
+.experience-container {
+    @apply flex flex-col gap-4 w-full;
+}
+
+.experience-item {
+    @apply flex justify-between border-b border-white py-4 text-xl;
+}
+
+.experience-item::first-child {
+    @apply text-2xl font-bold text-slate-300;
+}
+
+.experience-item::last-child {
+    @apply text-lg text-red-400;
+}
+
+.button-container {
+    @apply flex flex-wrap gap-3 w-full p-4 rounded-2xl mb-5;
+    background: linear-gradient(145deg, rgba(196, 29, 85, 0.14), rgba(255, 255, 255, 0.03));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(18px);
+    grid-column: 4;
+    grid-row: 1;
+}
+
+.project-sidebar {
+    @apply flex flex-col gap-4;
+    grid-column: 4;
+    grid-row: 1;
+    align-self: stretch;
+}
+
+#project-description {
+    @apply block text-slate-300;
+    grid-column: 4;
+    grid-row: 1;
+    line-height: 1.75;
+}
+
+.button-container button {
+    @apply cursor-pointer px-5 py-3 rounded-full text-sm;
+    color: #f8dbe5;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button-container button:hover {
+    border-color: rgba(196, 29, 85, 0.55);
+    background: rgba(196, 29, 85, 0.18);
+    box-shadow: 0 10px 30px rgba(196, 29, 85, 0.2);
+}
+
+.button-container button:focus-visible {
+    outline: 2px solid rgba(196, 29, 85, 0.75);
+    outline-offset: 3px;
+}
+
+.button-container button.active {
+    border-color: rgba(196, 29, 85, 0.55);
+    background: rgba(196, 29, 85, 0.18);
+    box-shadow: 0 10px 30px rgba(196, 29, 85, 0.2);
+}
+
+.project-container {
+    @apply grid grid-cols-4 gap-6 w-full p-6 rounded-4xl;
+    background:
+        radial-gradient(circle at top left, rgba(196, 29, 85, 0.2), transparent 35%),
+        linear-gradient(160deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(18px);
+    align-items: start;
+}
+
+.project-link {
+    grid-column: span 3;
+    display: none;
+}
+
+.project-link.active {
+    display: block;
+}
+
+.project-container img {
+    @apply w-full h-100 rounded-2xl block;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.ide-visual {
+    @apply w-full overflow-hidden rounded-[2rem];
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background:
+        radial-gradient(circle at top right, rgba(196, 29, 85, 0.14), transparent 30%),
+        linear-gradient(180deg, rgba(12, 12, 14, 0.98), rgba(18, 5, 11, 0.92));
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+.ide-topbar {
+    @apply flex items-center justify-between gap-4 px-5 py-4;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.ide-dots {
+    @apply flex gap-2 shrink-0;
+}
+
+.ide-dots span {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.ide-dots span:first-child {
+    background: #ff5f56;
+}
+
+.ide-dots span:nth-child(2) {
+    background: #ffbd2e;
+}
+
+.ide-dots span:last-child {
+    background: #27c93f;
+}
+
+.ide-body {
+    @apply grid grid-cols-[220px_minmax(0,1fr)_320px];
+    min-height: 28rem;
+}
+
+.ide-editor {
+    @apply flex flex-col gap-3 p-6;
+}
+
+.ide-line {
+    @apply grid gap-4 items-start;
+    grid-template-columns: 2rem minmax(0, 1fr);
+}
+
+.ide-number {
+    @apply text-right text-sm;
+    color: rgba(148, 163, 184, 0.45);
+}
+
+.ide-code {
+    @apply text-sm leading-7;
+    font-family: Consolas, 'Courier New', monospace;
+    color: #e2e8f0;
+}
+
+.ide-accent {
+    color: #f472b6;
+}
+
+.ide-attribute {
+    color: #7dd3fc;
+}
+
+.ide-string {
+    color: #86efac;
+}
+
+.contact-container {
+    @apply grid grid-cols-4 gap-6 p-5 w-full rounded-4xl;
+    background: radial-gradient(circle at 0 150%, rgba(196, 29, 85, 0.2), transparent 35%), linear-gradient(160deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+}
+
+.contact-container form {
+    @apply col-span-4;
+}
+.contact-container input,
+.contact-container textarea {
+    @apply w-full p-4 rounded-2xl bg-transparent text-slate-300 mb-5 resize-none;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.contact-container input:focus,
+.contact-container textarea:focus {
+    outline: none;
+    border-color: rgba(196, 29, 85, 0.55);
+    background: rgba(196, 29, 85, 0.18);
+}
+
+.contact-container button {
+    @apply cursor-pointer px-5 py-3 rounded-full text-sm self-start;
+    color: #f8dbe5;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-container button:hover {
+    border-color: rgba(196, 29, 85, 0.55);
+    background: rgba(196, 29, 85, 0.18);
+    box-shadow: 0 10px 30px rgba(196, 29, 85, 0.2);
+}
+
+footer {
+    @apply text-center text-sm text-slate-500 py-4;
+}
+
+@media (max-width: 900px) {
+    body {
+        margin: 0 4rem;
+    }
+
+    section {
+        margin: 4rem 0;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header h1::after {
+        font-size: 5rem;
+        top: -5rem;
+    }
+
+    .hero-container {
+        padding: 1rem;
+    }
+
+    .project-container {
+        @apply grid-cols-1 gap-5 p-5;
+    }
+
+    .project-link {
+        grid-column: 1;
+    }
+
+    .ide-body {
+        grid-template-columns: 1fr;
+    }
+
+    .ide-sidebar,
+    .ide-preview {
+        border: 0;
+    }
+
+    .ide-sidebar {
+        @apply flex-row flex-wrap items-center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .ide-preview {
+        @apply pt-0;
+    }
+
+    .project-container img {
+        height: 20rem;
+    }
+
+    .project-sidebar,
+    .button-container,
+    #project-description {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .button-container {
+        @apply mb-0;
+        order: 0;
+    }
+
+    .button-container button {
+        flex: 1 1 12rem;
+    }
+
+    #project-description {
+        font-size: 1rem;
+    }
+
+    .experience-item {
+        font-size: 1rem;
+    }
+    .experience-item span:last-child,
+    .experience-item a:last-child {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 640px) {
+    body {
+        margin: 0 1.25rem;
+    }
+
+    header {
+        min-height: 100svh;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header h1::after {
+        font-size: 3.5rem;
+        top: -3.5rem;
+    }
+
+    header p {
+        font-size: 1.1rem;
+    }
+
+    .container {
+        gap: 1.25rem;
+    }
+
+    .container h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        padding: 0.35rem 0.75rem;
+    }
+
+    .container p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .project-container {
+        padding: 1rem;
+        border-radius: 1.5rem;
+    }
+
+    .ide-topbar,
+    .ide-editor,
+    .ide-sidebar,
+    .ide-preview {
+        padding: 1rem;
+    }
+
+    .ide-tabs {
+        justify-content: flex-start;
+    }
+
+    .ide-tab {
+        font-size: 0.8rem;
+    }
+
+    .ide-preview-hero strong {
+        font-size: 1.35rem;
+    }
+
+    .ide-preview-hero p {
+        font-size: 0.95rem;
+    }
+
+    .project-container img {
+        height: 14rem;
+    }
+
+    .button-container {
+        @apply p-3 rounded-[1.25rem];
+    }
+
+    .button-container button {
+        width: 100%;
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
+    #project-description {
+        font-size: 0.95rem;
+    }
+}
