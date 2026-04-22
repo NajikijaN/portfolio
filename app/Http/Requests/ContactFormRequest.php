@@ -2,8 +2,10 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\Recaptcha;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class ContactFormRequest extends FormRequest
 {
@@ -19,10 +21,17 @@ class ContactFormRequest extends FormRequest
      */
     public function rules(): array
     {
+        $recaptchaEnabled = (string) config('services.recaptcha.site_key') !== ''
+            && (string) config('services.recaptcha.secret_key') !== '';
+
         return [
             'name' => ['required', 'string', 'max:120'],
             'email' => ['required', 'email', 'max:255'],
             'message' => ['required', 'string', 'max:5000'],
+            'g-recaptcha-response' => [
+                Rule::requiredIf($recaptchaEnabled),
+                new Recaptcha(config()),
+            ],
         ];
     }
 

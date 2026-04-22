@@ -3,6 +3,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kijan van Ginkel | Web Developer</title>
+    @if (config('services.recaptcha.site_key'))
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    @endif
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -36,7 +39,7 @@
 █████╔╝ ██║     ██║███████║██╔██╗ ██║
 ██╔═██╗ ██║██   ██║██╔══██║██║╚██╗██║
 ██║  ██╗██║╚█████╔╝██║  ██║██║ ╚████║
-╚═╝  ╚═╝╚═╝ ╚════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝                                                                  
+╚═╝  ╚═╝╚═╝ ╚════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝
             </pre>
         </div>
     </header>
@@ -142,18 +145,30 @@
                 <h2>Contact <span class="text-gradient">mij.</span></h2>
                 <p>Heb je een vraag, een projectidee of zoek je een developer? Ik sta open voor nieuwe uitdagingen en
                     interessante samenwerkingen.</p>
-                <div class="contact-container">
                     @if (session('success'))
                         <p class="success-message">{{ session('success') }}</p>
                     @endif
                     @if (session('error'))
                         <p class="error-message">{{ session('error') }}</p>
                     @endif
+                    @if ($errors->any())
+                        <div class="error-message">
+                            @foreach ($errors->all() as $error)
+                                <p>{{ $error }}</p>
+                            @endforeach
+                        </div>
+                    @endif
+                    <div class="contact-container">
                     <form id="contact" method="post" action="{{ route('contact.send') }}">
                         @csrf
                         <input type="text" name="name" placeholder="Naam" value="{{ old('name') }}" required>
                         <input type="email" name="email" placeholder="E-mail" value="{{ old('email') }}" required>
                         <textarea name="message" placeholder="Bericht" required>{{ old('message') }}</textarea>
+                        @if (config('services.recaptcha.site_key'))
+                            <div class="recaptcha-wrapper">
+                                <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key') }}"></div>
+                            </div>
+                        @endif
                         <button type="submit">Verstuur</button>
                     </form>
                 </div>
