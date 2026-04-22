@@ -223,7 +223,7 @@ main {
 }
 
 .ide-visual {
-    @apply w-full overflow-hidden rounded-[2rem];
+    @apply w-full overflow-hidden rounded-4xl;
     border: 1px solid rgba(255, 255, 255, 0.08);
     background:
         radial-gradient(circle at top right, rgba(196, 29, 85, 0.14), transparent 30%),

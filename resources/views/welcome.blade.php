@@ -9,45 +9,15 @@
 
 <body>
     <header>
-        <div class="hero-container">
+        <div class="hero-container hero-copy">
             <h1>
                 Hoi, ik ben <br>
                 <span class="text-gradient">Kijan van Ginkel.</span>
             </h1>
             <p>Web Developer Front-end | Back-end</p>
         </div>
-        {{-- <div class="w-2xl">
-            <img src="hero.svg" alt="hero image" class="hero-image">
+        <div class="hero-container">
         </div>
-        --}}
-
-        <div class="w-2xl">
-            <div class="ide-visual" aria-hidden="true">
-                <div class="ide-topbar">
-                    <div class="ide-dots">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-                <div class="ide-body">
-                    <div class="ide-editor">
-                        <div class="ide-line"><span class="ide-number">1</span></div>
-                        <div class="ide-line"><span class="ide-number">2</span></div>
-                        <div class="ide-line"><span class="ide-number">3</span></div>
-                        <div class="ide-line"><span class="ide-number">4</span></div>
-                        <div class="ide-line"><span class="ide-number">5</span></div>
-                        <div class="ide-line"><span class="ide-number">6</span></div>
-                        <div class="ide-line"><span class="ide-number">7</span></div>
-                        <div class="ide-line"><span class="ide-number">8</span></div>
-                        <div class="ide-line"><span class="ide-number">9</span></div>
-                        <div class="ide-line"><span class="ide-number">10</span></div>
-                        <div class="ide-line"><span class="ide-number">11</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
     </header>
     <main>
         <section>
@@ -64,7 +34,7 @@
                     </a>
                     <a class="project-link" data-project="nude" href="https://bbdeoudenude.nl" target="_blank"
                         rel="noreferrer">
-                        <img src="nude.png" alt="nude">
+                        <img src="bb.png" alt="nude">
                     </a>
                     {{-- <img src="hollandica.png" alt="hollandica"> --}}
                     <div class="project-sidebar">
@@ -89,21 +59,53 @@
                     vaardigheden omvatten HTML, CSS, JavaScript, PHP en verschillende frameworks en tools die ik gebruik
                     om efficiënte en aantrekkelijke digitale ervaringen te creëren.</p>
                 <div class="experience-container">
-                    <div class="experience-item">
-                        <span>Stage</span>
-                        <span>Depositado · Web Developer (2026 - heden)</span>
-                    </div>
-                    <div class="experience-item">
-                        <span>Hollandica B.V</span>
-                        <span>Webdesigner (2025 - heden)</span>
-                    </div>
-                    <div class="experience-item">
-                        <span>Klantproject</span>
-                        <a href="https://bbdeoudenude.nl" target="_blank">B&B De Oude Nude</a>
-                    </div>
-                    <div class="experience-item">
-                        <span>Kunstproject</span>
-                        <a href="https://paulenerna.nl" target="_blank">paulenerna.nl</a>
+                    <div class="ide-wrapper">
+                        <div class="ide-visual" aria-hidden="true">
+                            <div class="ide-topbar">
+                                <div class="ide-dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <span class="ide-title">ervaring.txt</span>
+                            </div>
+                            <div class="ide-body">
+                                <div class="ide-editor">
+                                    <div class="ide-line">
+                                        <span class="ide-number">1</span>
+                                        <div class="experience-item">
+                                            <h3>Stage</h3>
+                                            <span>Depositado · Web Developer (2026 - heden)</span>
+                                        </div>
+                                    </div>
+                                    <div class="ide-line">
+                                        <span class="ide-number">2</span>
+                                        <div class="experience-item">
+                                            <h3>Hollandica B.V</h3>
+                                            <span>Webdesigner (2025 - heden)</span>
+                                        </div>
+                                    </div>
+                                    <div class="ide-line">
+                                        <span class="ide-number">3</span>
+                                        <div class="experience-item">
+                                            <h3>Klantproject</h3>
+                                            <a href="https://bbdeoudenude.nl" target="_blank" class="text-gradient">B&B
+                                                De Oude Nude</a>
+                                        </div>
+                                    </div>
+                                    <div class="ide-line">
+                                        <span class="ide-number">4</span>
+                                        <div class="experience-item">
+                                            <h3>Kunstproject</h3>
+                                            <a href="https://paulenerna.nl" target="_blank"
+                                                class="text-gradient">paulenerna.nl</a>
+                                        </div>
+                                        <span class="ide-number">5</span>
+                                        <span class="typewriter"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -114,21 +116,27 @@
                 <p>Heb je een vraag, een projectidee of zoek je een developer? Ik sta open voor nieuwe uitdagingen en
                     interessante samenwerkingen.</p>
                 <div class="contact-container">
-                    <form method="post">
+                    @if (session('success'))
+                        <p class="success-message">{{ session('success') }}</p>
+                    @endif
+                    @if (session('error'))
+                        <p class="error-message">{{ session('error') }}</p>
+                    @endif
+                    <form id="contact" method="post" action="{{ route('contact.send') }}">
                         @csrf
-                        <input type="text" name="name" placeholder="Naam" required>
-                        <input type="email" name="email" placeholder="E-mail" required>
-                        <textarea name="message" placeholder="Bericht" required></textarea>
+                        <input type="text" name="name" placeholder="Naam" value="{{ old('name') }}" required>
+                        <input type="email" name="email" placeholder="E-mail" value="{{ old('email') }}" required>
+                        <textarea name="message" placeholder="Bericht" required>{{ old('message') }}</textarea>
                         <button type="submit">Verstuur</button>
                     </form>
                 </div>
         </section>
-        <footer>
-            <div class="container">
-                <p>&copy; {{ date('Y') }} Kijan van Ginkel. Alle rechten voorbehouden.</p>
-            </div>
-        </footer>
     </main>
+    <footer>
+        <div class="container">
+            <p>&copy; {{ date('Y') }} Kijan van Ginkel. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
 </body>
 
 </html>
