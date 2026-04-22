@@ -1,3 +1,5 @@
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 const buttons = document.querySelectorAll('.button-container button');
 const projectLinks = document.querySelectorAll('.project-link');
 const descriptionElement = document.getElementById('project-description');

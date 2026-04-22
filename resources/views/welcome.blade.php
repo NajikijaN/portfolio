@@ -1,5 +1,4 @@
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +13,24 @@
                 Hoi, ik ben <br>
                 <span class="text-gradient">Kijan van Ginkel.</span>
             </h1>
-            <p>Web Developer Front-end | Back-end</p>
+            <p>Web Developer Front-end | Back-end
+                <div class="social-icons">
+                    <div class="social-icon">
+                        <a href="https://github.com/NajikijaN" target="_blank" rel="noreferrer">
+                            <i class="fab fa-github fa-lg"></i>
+                        </a>
+                    </div>
+                    <div class="social-icon">
+                        <a href="https://www.linkedin.com/in/kijan-van-ginkel-867353226/" target="_blank" rel="noreferrer">
+                            <i class="fab fa-linkedin fa-lg"></i>
+
+                        </a>
+                    </div>
+                </div>
+            </p>
+        </div>
+        <div class="">
+
         </div>
     </header>
     <main>

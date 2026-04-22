@@ -70,6 +70,28 @@ header h1 {
     margin-bottom: 1rem;
 }
 
+.social-icons {
+    display: flex;
+    flex-direction: row;  
+    gap: 1rem;
+}
+
+.social-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.08);
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-icon:hover {
+    background: rgba(196, 29, 85, 0.18);
+    box-shadow: 0 10px 30px rgba(196, 29, 85, 0.2);
+}
+
 header h1::after {
     content: 'Kijan';
     position: absolute;
