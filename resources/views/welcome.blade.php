@@ -51,11 +51,17 @@
                 <div class="project-container">
                     <a class="project-link active" data-project="viewsource" href="http://view-source.najikweb.com"
                         target="_blank" rel="noreferrer">
-                        <img src="viewsource.png" alt="viewsource">
+                        <div>
+                            <i class="fa-solid fa-link image-link"></i>
+                            <img src="viewsource.png" alt="viewsource">
+                        </div>
                     </a>
                     <a class="project-link" data-project="nude" href="https://bbdeoudenude.nl" target="_blank"
                         rel="noreferrer">
-                        <img src="bb.png" alt="nude">
+                        <div>
+                            <i class="fa-solid fa-link image-link"></i>
+                            <img src="bb.png" alt="nude">
+                        </div>
                     </a>
                     {{-- <img src="hollandica.png" alt="hollandica"> --}}
                     <div class="project-sidebar">
@@ -110,17 +116,17 @@
                                         <span class="ide-number">3</span>
                                         <div class="experience-item">
                                             <h3>Klantproject</h3>
-                                            <a href="https://bbdeoudenude.nl" target="_blank" class="text-gradient">B&B
-                                                De Oude Nude</a>
+                                            <a href="https://bbdeoudenude.nl" target="_blank">B&B De Oude Nude <i class="fa-solid fa-link"></i></a>
                                         </div>
                                     </div>
                                     <div class="ide-line">
                                         <span class="ide-number">4</span>
                                         <div class="experience-item">
                                             <h3>Kunstproject</h3>
-                                            <a href="https://paulenerna.nl" target="_blank"
-                                                class="text-gradient">paulenerna.nl</a>
+                                            <a href="https://paulenerna.nl" target="_blank">paulenerna.nl <i class="fa-solid fa-link"></i></span></a>
                                         </div>
+                                    </div>
+                                    <div class="ide-line ide-cursor-line">
                                         <span class="ide-number">5</span>
                                         <span class="typewriter"></span>
                                     </div>

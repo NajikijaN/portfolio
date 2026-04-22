@@ -77,6 +77,12 @@ header h1 {
     gap: 1rem;
 }
 
+.image-link {
+    position: absolute;
+    margin: 10px 0 0 10px;
+    font-size: 1.5rem;
+}
+
 .social-icon {
     width: 2.5rem;
     height: 2.5rem;
@@ -145,8 +151,15 @@ header p {
     width: 48%;
 }
 
-.ascii-container pre {
-    display: flex;    
+.top-ascii-container {
+    font-size: 2rem;
+    color: rgba(255, 255, 255);
+    line-height: 1.3;
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: hidden;
+    width: 48%;
 }
 
 .container {
@@ -172,13 +185,14 @@ header p {
 .experience-item {
     @apply flex justify-between pb-5 text-xl;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    gap: 1rem;
 }
 
-.experience-item::first-child {
+.experience-item:first-child {
     @apply text-2xl font-bold text-slate-300;
 }
 
-.experience-item::last-child {
+.experience-item:last-child {
     @apply text-lg text-red-400;
 }
 
@@ -328,6 +342,10 @@ header p {
     grid-template-columns: 2rem minmax(0, 1fr);
 }
 
+.ide-cursor-line {
+    align-items: center;
+}
+
 .ide-number {
     @apply text-right text-sm;
     color: rgba(148, 163, 184, 0.45);
@@ -383,6 +401,12 @@ footer {
     @apply text-center text-sm text-slate-500 py-4;
 }
 
+@media (max-width: 1700px) {
+    .ascii-container {
+        font-size: 1.5rem;
+    }
+}
+
 @media (max-width: 1500px) {
     .project-sidebar,
     .button-container,
@@ -413,6 +437,28 @@ footer {
         padding: 1rem;
         border-radius: 1.5rem;
         display: block;
+    }
+    .ascii-container {
+        font-size: 1.2rem;
+
+    }
+}
+
+@media (max-width: 1150px) {
+    
+    header h1::after {
+        @apply hidden;
+    }
+
+    header {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: normal;
+        gap: 2rem;
+        height: 60vh;
+    }
+    .ascii-container {
+        width: 100%;
     }
 }
 
@@ -448,6 +494,7 @@ footer {
 
     .experience-item {
         font-size: 1rem;
+        gap: 0.75rem;
     }
     .experience-item span,
     .experience-item a {
@@ -461,7 +508,7 @@ footer {
     }
 
     header {
-        min-height: 100svh;
+        min-height: 75svh;
     }
 
     header h1 {
@@ -527,6 +574,20 @@ footer {
 }
 
 @media (max-width: 450px) {    
+    .ide-topbar {
+        padding: 0.875rem 1rem;
+    }
+
+    .ide-editor {
+        padding: 1rem 0.75rem;
+        gap: 0.75rem;
+    }
+
+    .ide-line {
+        gap: 0.5rem;
+        grid-template-columns: 1.25rem minmax(0, 1fr);
+    }
+
     .experience-item span,
     .experience-item a,
     .experience-item h3 {
@@ -536,9 +597,23 @@ footer {
     .ide-line * {
         font-size: 0.75rem;
     }
-    .ide-editor {
-        padding: 1rem 0.5rem 0 0;
-        display: flex;
+
+    .experience-item {
         flex-direction: column;
+        align-items: flex-start;
+        gap: 0.35rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .experience-item span,
+    .experience-item a {
+        overflow-wrap: anywhere;
+    }
+
+    .typewriter {
+        height: 1rem;
+    }
+    .ascii-container {
+        font-size: 0.75rem;
     }
 }
