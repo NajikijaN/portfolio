@@ -9,14 +9,12 @@
 
 <body>
     <header>
-        <div class="hero-container hero-copy">
+        <div class="hero-container">
             <h1>
                 Hoi, ik ben <br>
                 <span class="text-gradient">Kijan van Ginkel.</span>
             </h1>
             <p>Web Developer Front-end | Back-end</p>
-        </div>
-        <div class="hero-container">
         </div>
     </header>
     <main>
