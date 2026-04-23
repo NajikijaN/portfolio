@@ -143,11 +143,11 @@
                 <h2>Contact <span class="text-gradient">mij.</span></h2>
                 <p>Heb je een vraag, een projectidee of zoek je een developer? Ik sta open voor nieuwe uitdagingen en
                     interessante samenwerkingen.</p>
-                    @if (session('success'))
-                        <p class="success-message">{{ session('success') }}</p>
-                    @endif
-                    @if (session('error'))
-                        <p class="error-message">{{ session('error') }}</p>
+                    @if(session('success') || session('error'))
+                        <script>
+                            window.toastifyMessage = @json(session('success') ?? session('error'));
+                            window.toastifyType = '{{ session('success') ? 'success' : 'error' }}';
+                        </script>
                     @endif
                     @if ($errors->any())
                         <div class="error-message">

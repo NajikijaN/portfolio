@@ -41,7 +41,7 @@ class ContactController extends Controller
 
             return back()
                 ->withInput()
-                ->with('error', 'Je bericht kon niet worden verzonden. Probeer het zo nog eens.');
+                ->with('error', 'Er is een fout opgetreden bij het verzenden van je bericht. Probeer het later opnieuw.');
 
         }
         header('Location: '.route('welcome').'#contact');
