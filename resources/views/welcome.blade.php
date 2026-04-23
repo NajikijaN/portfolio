@@ -56,14 +56,12 @@
                     <a class="project-link active" data-project="viewsource" href="http://view-source.najikweb.com"
                         target="_blank" rel="noreferrer">
                         <div>
-                            <i class="fa-solid fa-link image-link"></i>
                             <img src="viewsource.png" alt="viewsource">
                         </div>
                     </a>
                     <a class="project-link" data-project="nude" href="https://bbdeoudenude.nl" target="_blank"
                         rel="noreferrer">
                         <div>
-                            <i class="fa-solid fa-link image-link"></i>
                             <img src="bb.png" alt="nude">
                         </div>
                     </a>
