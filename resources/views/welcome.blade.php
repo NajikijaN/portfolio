@@ -1,15 +1,14 @@
+@php($recaptchaEnabled = config('services.recaptcha.enabled') && config('services.recaptcha.site_key'))
+@php($recaptchaSiteKey = $recaptchaEnabled ? config('services.recaptcha.site_key') : null)
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kijan van Ginkel | Web Developer</title>
     <link rel="icon" href="{{ asset('favicon.ico') }}">
-    @if (config('services.recaptcha.site_key'))
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    @endif
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-
 <body>
     <header>
         <div class="hero-container">
@@ -158,16 +157,12 @@
                         </div>
                     @endif
                     <div class="contact-container">
-                    <form id="contact" method="post" action="{{ route('contact.send') }}">
+                    <form id="contact" method="post" action="{{ route('contact.send') }}" @if ($recaptchaSiteKey) data-recaptcha-site-key="{{ $recaptchaSiteKey }}" @endif>
                         @csrf
                         <input type="text" name="name" placeholder="Naam" value="{{ old('name') }}" required>
                         <input type="email" name="email" placeholder="E-mail" value="{{ old('email') }}" required>
                         <textarea name="message" placeholder="Bericht" required>{{ old('message') }}</textarea>
-                        @if (config('services.recaptcha.site_key'))
-                            <div class="recaptcha-wrapper">
-                                <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key') }}"></div>
-                            </div>
-                        @endif
+                        <input type="hidden" name="g-recaptcha-response" value="{{ old('g-recaptcha-response') }}">
                         <button type="submit">Verstuur</button>
                     </form>
                 </div>
@@ -178,6 +173,9 @@
             <p>&copy; {{ date('Y') }} Kijan van Ginkel. Alle rechten voorbehouden.</p>
         </div>
     </footer>
+    @if ($recaptchaSiteKey)
+        <script src="https://www.google.com/recaptcha/api.js?render={{ $recaptchaSiteKey }}"></script>
+    @endif
 </body>
 
 </html>

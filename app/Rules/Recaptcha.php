@@ -13,6 +13,8 @@ class Recaptcha implements ValidationRule
 {
     public function __construct(
         private readonly Repository $config,
+        private readonly string $expectedAction = 'contact',
+        private readonly float $minimumScore = 0.5,
     ) {}
 
     /**
@@ -51,14 +53,27 @@ class Recaptcha implements ValidationRule
 
         if (! $response->successful() || ! is_array($payload) || ! ($payload['success'] ?? false)) {
             $fail('De reCAPTCHA controle is mislukt. Probeer het opnieuw.');
+
+            return;
+        }
+
+        if (($payload['action'] ?? null) !== $this->expectedAction) {
+            $fail('De reCAPTCHA controle is mislukt. Probeer het opnieuw.');
+
+            return;
+        }
+
+        if (! is_numeric($payload['score'] ?? null) || (float) $payload['score'] < $this->minimumScore) {
+            $fail('De reCAPTCHA controle is mislukt. Probeer het opnieuw.');
         }
     }
 
     private function isEnabled(): bool
     {
+        $enabled = (bool) $this->config->get('services.recaptcha.enabled', false);
         $siteKey = (string) $this->config->get('services.recaptcha.site_key');
         $secretKey = (string) $this->config->get('services.recaptcha.secret_key');
 
-        return $siteKey !== '' && $secretKey !== '';
+        return $enabled && $siteKey !== '' && $secretKey !== '';
     }
 }
