@@ -6,6 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kijan van Ginkel | Web Developer</title>
+    <meta name="description" content="Portfolio van Kijan van Ginkel, web developer in opleiding. Bekijk projecten, skills en contactinformatie.">
+    <meta name="keywords" content="web developer, portfolio, HTML, CSS, JavaScript, PHP, projecten, Kijan van Ginkel">
+    <meta name="author" content="Kijan van Ginkel">
     <link rel="icon" href="{{ asset('favicon.ico') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -40,6 +43,7 @@
 ██╔═██╗ ██║██   ██║██╔══██║██║╚██╗██║
 ██║  ██╗██║╚█████╔╝██║  ██║██║ ╚████║
 ╚═╝  ╚═╝╚═╝ ╚════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝
+            
             </pre>
         </div>
     </header>
