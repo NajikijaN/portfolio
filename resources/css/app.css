@@ -141,8 +141,43 @@ header p {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    overflow: hidden;
+    overflow: visible;
     width: 48%;
+}
+
+.ascii-art {
+    margin: 0;
+    overflow: visible;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+    white-space: pre;
+}
+
+.ascii-line {
+    height: 0.01em;
+    display: block;
+}
+
+.ascii-cell,
+.ascii-space {
+    display: inline-flex;
+    width: 1ch;
+    height: 1.15em;
+    align-items: center;
+    justify-content: center;
+}
+
+.ascii-cell {
+    border-radius: 0.2rem;
+    cursor: pointer;
+    transition: transform 0.16s ease, background 0.16s ease, text-shadow 0.16s ease;
+}
+
+.ascii-cell:hover {
+    background: rgba(196, 29, 85, 0.16);
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
+    text-shadow: 0 0 18px rgba(196, 29, 85, 0.9);
+    transform: translateY(-0.16em) scale(1.16);
 }
 
 .top-ascii-container {
