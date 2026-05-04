@@ -11,6 +11,7 @@
     <meta name="author" content="Kijan van Ginkel">
     <link rel="icon" href="{{ asset('favicon.ico') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <script defer src="https://umami.prowser.nl/script.js" data-website-id="d196a194-2f7a-4a6a-9e1a-ce8eb29a31bf"></script>
 </head>
 <body>
     <header>
@@ -184,6 +185,5 @@
     @if ($recaptchaSiteKey)
         <script src="https://www.google.com/recaptcha/api.js?render={{ $recaptchaSiteKey }}"></script>
     @endif
-    <script defer src="https://umami.prowser.nl/script.js" data-website-id="d196a194-2f7a-4a6a-9e1a-ce8eb29a31bf"></script>
 </body>
 </html>
