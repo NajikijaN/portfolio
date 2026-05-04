@@ -62,7 +62,7 @@
                     werk ik veel aan het verbeteren van mijn vaardigheden en het ontwikkelen van nieuwe projecten.
                     Bekijk hieronder enkele van mijn projecten:</p>
                 <div class="project-container">
-                    <a class="project-link active" data-project="viewsource" href="http://view-source.najikweb.com"
+                    <a class="project-link active" data-project="viewsource" href="http://viewsource.najik.dev"
                         target="_blank" rel="noreferrer">
                         <div>
                             <img src="viewsource.png" alt="viewsource">
