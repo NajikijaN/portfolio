@@ -184,6 +184,6 @@
     @if ($recaptchaSiteKey)
         <script src="https://www.google.com/recaptcha/api.js?render={{ $recaptchaSiteKey }}"></script>
     @endif
+    <script defer src="https://umami.prowser.nl/script.js" data-website-id="d196a194-2f7a-4a6a-9e1a-ce8eb29a31bf"></script>
 </body>
-
 </html>
