@@ -354,7 +354,7 @@ header p {
 
 .contact-container {
     @apply grid grid-cols-4 gap-6 p-5 w-full rounded-4xl;
-    background: radial-gradient(circle at 0 150%, rgba(196, 29, 85, 0.2), transparent 35%), linear-gradient(160deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+    background: radial-gradient(circle at 0 125%, rgba(196, 29, 85, 0.2), transparent 35%), linear-gradient(160deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
 }
 
 .contact-container form {

@@ -43,7 +43,6 @@
 ██╔═██╗ ██║██   ██║██╔══██║██║╚██╗██║
 ██║  ██╗██║╚█████╔╝██║  ██║██║ ╚████║
 ╚═╝  ╚═╝╚═╝ ╚════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝
-            
             </pre>
         </div>
     </header>
@@ -68,18 +67,23 @@
                             <img src="bb.png" alt="nude">
                         </div>
                     </a>
-                    {{-- <img src="hollandica.png" alt="hollandica"> --}}
+                    <a class="project-link" data-project="hollandica" href="https://hollandicabv.nl" target="_blank" rel="noreferrer">
+                        <div>
+                            <img src="hollandica.png" alt="hollandica">
+                        </div>
+                    </a>
                     <div class="project-sidebar">
                         <div class="button-container">
                             <button class="active" data-project="viewsource">ViewSource</button>
                             <button data-project="nude">B&B De Oude Nude</button>
-                            {{-- <button data-project="hollandica">Hollandica B.V</button> --}}
+                            <button data-project="hollandica">Hollandica B.V</button>
                         </div>
                         <p id="project-description">ViewSource is een open-source project dat ik heb ontwikkeld met
                             Laravel. Met ViewSource kunnen gebruikers gemakkelijk een URL invoeren en de broncode van
                             die pagina bekijken. Het project is ontworpen om educatief te zijn, zodat gebruikers kunnen
                             leren hoe webpagina's zijn opgebouwd en hoe ze werken. Probeer het zelf uit door een URL in
-                            te voeren en de broncode te verkennen!</p>
+                            te voeren en de broncode te verkennen!
+                        </p>
                     </div>
                 </div>
             </div>

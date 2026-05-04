@@ -28,8 +28,8 @@ const contactForm = document.getElementById('contact');
 
 const descriptions = {
     viewsource: 'ViewSource is een open-source project dat ik heb ontwikkeld met Laravel. Met ViewSource kunnen gebruikers gemakkelijk een URL invoeren en de broncode van die pagina bekijken. Het project is ontworpen om educatief te zijn, zodat gebruikers kunnen leren hoe webpagina\'s zijn opgebouwd en hoe ze werken. Probeer het zelf uit door een URL in te voeren en de broncode te verkennen!',
-    nude: 'Website ontwikkeld voor Hollandica B.V. met een professionele uitstraling en een gebruiksvriendelijke interface. De website is ontworpen om klanten een kijkje te laten nemen van en in B&B De Oude Nude. Ook kunnen klanen gemakkelijk contact opnemen en reserveringen maken.',
-    hollandica: ''
+    nude: 'Website ontwikkeld voor de Bed and Breakfast van Hollandica B.V. met een professionele uitstraling en een gebruiksvriendelijke interface. De website is ontworpen om klanten een kijkje te laten nemen van en in B&B De Oude Nude. Ook kunnen klanen gemakkelijk contact opnemen en reserveringen maken.',
+    hollandica: 'Bedrijfssite van Hollandica B.V. uit Wageningen. De website is ontworpen om een professionele indruk te maken en de diensten van Hollandica B.V. duidelijk te presenteren. Bezoekers kunnen gemakkelijk informatie vinden over de verschillende diensten die het bedrijf aanbiedt, evenals contactgegevens. Klanten kunnen ook eenvoudig contact opnemen en offertes aanvragen via de website.',
 };
 
 if (buttons.length > 0 && descriptionElement) {
