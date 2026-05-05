@@ -11,8 +11,7 @@
     <meta name="author" content="Kijan van Ginkel">
     <link rel="icon" href="{{ asset('favicon.ico') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script defer src="https://umami.prowser.nl/script.js" data-website-id="d196a194-2f7a-4a6a-9e1a-ce8eb29a31bf"></script>
-</head>
+    <script defer src="https://umami.prowser.nl/script.js" data-website-id="e5dd7bdd-0d2a-4545-8f33-fd6b11735e09"></script></head>
 <body>
     <header>
         <div class="hero-container">
