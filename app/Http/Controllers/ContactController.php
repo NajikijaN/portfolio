@@ -21,8 +21,8 @@ class ContactController extends Controller
                 (string) config('mail.from.name')
             );
             $mail->addAddress(
-                (string) config('mail.from.address'),
-                (string) config('mail.from.name')
+                (string) config('mail.to.address', config('mail.from.address')),
+                (string) config('mail.to.name', config('mail.from.name'))
             );
             $mail->addReplyTo($request->string('email')->toString(), $request->string('name')->toString());
             $mail->isHTML(false);
