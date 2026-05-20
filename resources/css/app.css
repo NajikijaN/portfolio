@@ -226,13 +226,13 @@ header p {
 }
 
 .button-container {
-    @apply flex flex-wrap gap-3 w-full p-4 rounded-2xl mb-5;
+    @apply grid gap-3 w-full p-4 rounded-2xl mb-5;
     background: linear-gradient(145deg, rgba(196, 29, 85, 0.14), rgba(255, 255, 255, 0.03));
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
     backdrop-filter: blur(18px);
     grid-column: 4;
-    grid-row: 1;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .project-sidebar {
@@ -250,7 +250,7 @@ header p {
 }
 
 .button-container button {
-    @apply cursor-pointer px-5 py-3 rounded-full text-sm;
+    @apply cursor-pointer px-5 py-2 rounded-full text-sm;
     color: #f8dbe5;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);

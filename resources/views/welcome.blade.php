@@ -78,11 +78,17 @@
                             <img src="hollandica.png" alt="hollandica">
                         </div>
                     </a>
+                    <a class="project-link" data-project="avontuuramerongen" href="https://avontuuramerongen.nl" target="_blank" rel="noreferrer">
+                        <div>
+                            <img src="avontuuramerongen.png" alt="avontuuramerongen">
+                        </div>
+                    </a>
                     <div class="project-sidebar">
                         <div class="button-container">
                             <button class="active" data-project="viewsource">ViewSource</button>
                             <button data-project="nude">B&B De Oude Nude</button>
                             <button data-project="hollandica">Hollandica B.V</button>
+                            <button data-project="avontuuramerongen">Avontuur Amerongen</button>
                         </div>
                         <p id="project-description">ViewSource is een open-source project dat ik heb ontwikkeld met
                             Laravel. Met ViewSource kunnen gebruikers gemakkelijk een URL invoeren en de broncode van
