@@ -605,6 +605,7 @@ footer {
 
     .button-container {
         @apply p-3 rounded-[1.25rem];
+        grid-template-columns: 1fr;
     }
 
     .button-container button {
