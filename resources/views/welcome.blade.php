@@ -12,6 +12,11 @@
     <link rel="icon" href="{{ asset('favicon.ico') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script defer src="https://umami.prowser.nl/script.js" data-website-id="e5dd7bdd-0d2a-4545-8f33-fd6b11735e09"></script></head>
+
+    <meta property="og:title" content="Kijan van Ginkel | Web Developer">
+    <meta property="og:description" content="Portfolio van Kijan van Ginkel, web developer in opleiding. Bekijk projecten, skills en contactinformatie.">
+    <meta property="og:image" content="{{ asset('og-image.png') }}">
+    <meta property="og:url" content="{{ url('/') }}">
 <body>
     <header>
         <div class="hero-container">
