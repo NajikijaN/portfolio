@@ -263,8 +263,8 @@
             <p>&copy; {{ date('Y') }} Kijan van Ginkel. Alle rechten voorbehouden.</p>
         </div>
     </footer>
-    @if ($recaptchaSiteKey)
+    <?php if ($recaptchaSiteKey): ?>
         <script src="https://www.google.com/recaptcha/api.js?render={{ $recaptchaSiteKey }}"></script>
-    @endif
+    <?php endif; ?>
 </body>
 </html>
