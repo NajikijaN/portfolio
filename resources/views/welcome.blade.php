@@ -116,8 +116,8 @@
                 ];
             ?>
             <pre class="ascii-art" aria-label="Kijan">
-@foreach ($asciiLines as $line)<span class="ascii-line">@foreach (mb_str_split($line) as $character)<span class="{{ $character === ' ' ? 'ascii-space' : 'ascii-cell' }}" aria-hidden="true">{{ $character === ' ' ? "\u{00A0}" : $character }}</span>@endforeach</span>
-@endforeach
+<?php foreach ($asciiLines as $line): ?><span class="ascii-line"><?php foreach (mb_str_split($line) as $character): ?><span class="<?php echo $character === ' ' ? 'ascii-space' : 'ascii-cell'; ?>" aria-hidden="true"><?php echo $character === ' ' ? "\u{00A0}" : e($character); ?></span><?php endforeach; ?></span>
+<?php endforeach; ?>
             </pre>
         </div>
     </header>
@@ -232,19 +232,19 @@
                 <h2>Contact <span class="text-gradient">mij.</span></h2>
                 <p>Heb je een vraag, een projectidee of zoek je een developer? Ik sta open voor nieuwe uitdagingen en
                     interessante samenwerkingen.</p>
-                    @if(session('success') || session('error'))
+                    <?php if (session('success') || session('error')): ?>
                         <script>
-                            window.toastifyMessage = @json(session('success') ?? session('error'));
-                            window.toastifyType = '{{ session('success') ? 'success' : 'error' }}';
+                            window.toastifyMessage = <?php echo Illuminate\Support\Js::from(session('success') ?? session('error')); ?>;
+                            window.toastifyType = '<?php echo session('success') ? 'success' : 'error'; ?>';
                         </script>
-                    @endif
-                    @if ($errors->any())
+                    <?php endif; ?>
+                    <?php if ($errors->any()): ?>
                         <div class="error-message">
-                            @foreach ($errors->all() as $error)
-                                <p>{{ $error }}</p>
-                            @endforeach
+                            <?php foreach ($errors->all() as $error): ?>
+                                <p><?php echo e($error); ?></p>
+                            <?php endforeach; ?>
                         </div>
-                    @endif
+                    <?php endif; ?>
                     <div class="contact-container">
                         <form id="contact" method="post" action="{{ route('contact.send') }}" data-recaptcha-site-key="{{ $recaptchaSiteKey }}">
                             @csrf
