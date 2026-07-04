@@ -11,12 +11,76 @@
     <meta name="author" content="Kijan van Ginkel">
     <link rel="icon" href="{{ asset('favicon.ico') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script defer src="https://umami.prowser.nl/script.js" data-website-id="e5dd7bdd-0d2a-4545-8f33-fd6b11735e09"></script></head>
+    <script defer src="https://umami.prowser.nl/script.js" data-website-id="e5dd7bdd-0d2a-4545-8f33-fd6b11735e09"></script>
 
     <meta property="og:title" content="Kijan van Ginkel | Web Developer">
     <meta property="og:description" content="Portfolio van Kijan van Ginkel, web developer in opleiding. Bekijk projecten, skills en contactinformatie.">
     <meta property="og:image" content="{{ asset('og-image.png') }}">
     <meta property="og:url" content="{{ url('/') }}">
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Person",
+            "@id": "{{ url('/') }}#person",
+            "name": "Kijan van Ginkel",
+            "url": "{{ url('/') }}",
+            "image": "{{ asset('og-image.png') }}",
+            "jobTitle": "Full Stack Web Developer",
+            "description": "Full Stack Web Developer gespecialiseerd in Laravel, PHP, JavaScript, HTML, CSS en MySQL.",
+            "nationality": "Dutch",
+            "knowsAbout": [
+                "Laravel",
+                "PHP",
+                "JavaScript",
+                "TypeScript",
+                "HTML5",
+                "CSS3",
+                "Tailwind CSS",
+                "MySQL",
+                "Git",
+                "REST API Development",
+                "Full Stack Development",
+                "Web Development"
+            ],
+            "sameAs": [
+                "https://github.com/NajikijaN",
+                "https://www.linkedin.com/in/kijan-van-ginkel-867353226/"
+            ]
+        },
+        {
+            "@type": "WebSite",
+            "@id": "{{ url('/') }}#website",
+            "url": "{{ url('/') }}",
+            "name": "Kijan van Ginkel",
+            "publisher": {
+                "@id": "{{ url('/') }}#person"
+            },
+            "inLanguage": "nl-NL"
+        },
+        {
+            "@type": "WebPage",
+            "@id": "{{ url()->current() }}#webpage",
+            "url": "{{ url()->current() }}",
+            "name": "Portfolio van Kijan van Ginkel",
+            "description": "Portfolio met projecten, vaardigheden en contactinformatie van full stack web developer Kijan van Ginkel.",
+            "isPartOf": {
+                "@id": "{{ url('/') }}#website"
+            },
+            "about": {
+                "@id": "{{ url('/') }}#person"
+            },
+            "primaryImageOfPage": {
+                "@type": "ImageObject",
+                "url": "{{ asset('og-image.png') }}"
+            },
+            "inLanguage": "nl-NL"
+        }
+    ]
+}
+</script>
+</head>
 <body>
     <header>
         <div class="hero-container">
@@ -61,7 +125,7 @@
         <section>
             <div class="container">
                 <h2 class="">Over <span class="text-gradient">mij.</span></h2>
-                <p>Ik ben Kijan van Ginkel, 16 jaar oud en woon op de Utrechtse Heuvelrug. Ik ben een Web Developer met
+                <p>Ik ben Kijan van Ginkel, 17 jaar oud en woon op de Utrechtse Heuvelrug. Ik ben een Web Developer met
                     ervaring in zowel front-end als back-end ontwikkeling, momenteel in opleiding. Buiten mijn studie
                     werk ik veel aan het verbeteren van mijn vaardigheden en het ontwikkelen van nieuwe projecten.
                     Bekijk hieronder enkele van mijn projecten:</p>
