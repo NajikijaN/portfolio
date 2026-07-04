@@ -1,5 +1,7 @@
-@php($recaptchaEnabled = config('services.recaptcha.enabled') && config('services.recaptcha.site_key'))
-@php($recaptchaSiteKey = $recaptchaEnabled ? config('services.recaptcha.site_key') : null)
+<?php
+    $recaptchaEnabled = config('services.recaptcha.enabled') && config('services.recaptcha.site_key');
+    $recaptchaSiteKey = $recaptchaEnabled ? config('services.recaptcha.site_key') : null;
+?>
 
 <html lang="en">
 <head>
@@ -9,24 +11,24 @@
     <meta name="description" content="Portfolio van Kijan van Ginkel, web developer in opleiding. Bekijk projecten, skills en contactinformatie.">
     <meta name="keywords" content="web developer, portfolio, HTML, CSS, JavaScript, PHP, projecten, Kijan van Ginkel">
     <meta name="author" content="Kijan van Ginkel">
-    <link rel="icon" href="{{ asset('favicon.ico') }}">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="icon" href="<?php echo e(asset('favicon.ico')); ?>">
+    <?php echo app(\Illuminate\Foundation\Vite::class)(['resources/css/app.css', 'resources/js/app.js']); ?>
     <script defer src="https://umami.prowser.nl/script.js" data-website-id="e5dd7bdd-0d2a-4545-8f33-fd6b11735e09"></script>
 
     <meta property="og:title" content="Kijan van Ginkel | Web Developer">
     <meta property="og:description" content="Portfolio van Kijan van Ginkel, web developer in opleiding. Bekijk projecten, skills en contactinformatie.">
-    <meta property="og:image" content="{{ asset('og-image.png') }}">
-    <meta property="og:url" content="{{ url('/') }}">
+    <meta property="og:image" content="<?php echo e(asset('og-image.png')); ?>">
+    <meta property="og:url" content="<?php echo e(url('/')); ?>">
     <script type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@graph": [
+    "\u0040context": "https://schema.org",
+    "\u0040graph": [
         {
-            "@type": "Person",
-            "@id": "{{ url('/') }}#person",
+            "\u0040type": "Person",
+            "\u0040id": "<?php echo e(url('/')); ?>#person",
             "name": "Kijan van Ginkel",
-            "url": "{{ url('/') }}",
-            "image": "{{ asset('og-image.png') }}",
+            "url": "<?php echo e(url('/')); ?>",
+            "image": "<?php echo e(asset('og-image.png')); ?>",
             "jobTitle": "Full Stack Web Developer",
             "description": "Full Stack Web Developer gespecialiseerd in Laravel, PHP, JavaScript, HTML, CSS en MySQL.",
             "nationality": "Dutch",
@@ -50,30 +52,30 @@
             ]
         },
         {
-            "@type": "WebSite",
-            "@id": "{{ url('/') }}#website",
-            "url": "{{ url('/') }}",
+            "\u0040type": "WebSite",
+            "\u0040id": "<?php echo e(url('/')); ?>#website",
+            "url": "<?php echo e(url('/')); ?>",
             "name": "Kijan van Ginkel",
             "publisher": {
-                "@id": "{{ url('/') }}#person"
+                "\u0040id": "<?php echo e(url('/')); ?>#person"
             },
             "inLanguage": "nl-NL"
         },
         {
-            "@type": "WebPage",
-            "@id": "{{ url()->current() }}#webpage",
-            "url": "{{ url()->current() }}",
+            "\u0040type": "WebPage",
+            "\u0040id": "<?php echo e(url()->current()); ?>#webpage",
+            "url": "<?php echo e(url()->current()); ?>",
             "name": "Portfolio van Kijan van Ginkel",
             "description": "Portfolio met projecten, vaardigheden en contactinformatie van full stack web developer Kijan van Ginkel.",
             "isPartOf": {
-                "@id": "{{ url('/') }}#website"
+                "\u0040id": "<?php echo e(url('/')); ?>#website"
             },
             "about": {
-                "@id": "{{ url('/') }}#person"
+                "\u0040id": "<?php echo e(url('/')); ?>#person"
             },
             "primaryImageOfPage": {
-                "@type": "ImageObject",
-                "url": "{{ asset('og-image.png') }}"
+                "\u0040type": "ImageObject",
+                "url": "<?php echo e(asset('og-image.png')); ?>"
             },
             "inLanguage": "nl-NL"
         }
@@ -246,12 +248,12 @@
                         </div>
                     <?php endif; ?>
                     <div class="contact-container">
-                        <form id="contact" method="post" action="{{ route('contact.send') }}" data-recaptcha-site-key="{{ $recaptchaSiteKey }}">
-                            @csrf
-                            <input type="text" name="name" placeholder="Naam" value="{{ old('name') }}" required>
-                            <input type="email" name="email" placeholder="E-mail" value="{{ old('email') }}" required>
-                            <textarea name="message" placeholder="Bericht" required>{{ old('message') }}</textarea>
-                            <input type="hidden" name="g-recaptcha-response" value="{{ old('g-recaptcha-response') }}">
+                        <form id="contact" method="post" action="<?php echo e(route('contact.send')); ?>" data-recaptcha-site-key="<?php echo e($recaptchaSiteKey); ?>">
+                            <?php echo csrf_field(); ?>
+                            <input type="text" name="name" placeholder="Naam" value="<?php echo e(old('name')); ?>" required>
+                            <input type="email" name="email" placeholder="E-mail" value="<?php echo e(old('email')); ?>" required>
+                            <textarea name="message" placeholder="Bericht" required><?php echo e(old('message')); ?></textarea>
+                            <input type="hidden" name="g-recaptcha-response" value="<?php echo e(old('g-recaptcha-response')); ?>">
                             <button type="submit">Verstuur</button>
                         </form>
                     </div>
@@ -260,7 +262,7 @@
     </main>
     <footer>
         <div class="container">
-            <p>&copy; {{ date('Y') }} Kijan van Ginkel. Alle rechten voorbehouden.</p>
+            <p>&copy; <?php echo date('Y'); ?> Kijan van Ginkel. Alle rechten voorbehouden.</p>
         </div>
     </footer>
     <?php echo $recaptchaSiteKey ? '<script src="https://www.google.com/recaptcha/api.js?render='.e(urlencode($recaptchaSiteKey)).'"></script>' : ''; ?>
