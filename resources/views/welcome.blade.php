@@ -246,14 +246,15 @@
                         </div>
                     @endif
                     <div class="contact-container">
-                    <form id="contact" method="post" action="{{ route('contact.send') }}" @if ($recaptchaSiteKey) data-recaptcha-site-key="{{ $recaptchaSiteKey }}" @endif>
-                        @csrf
-                        <input type="text" name="name" placeholder="Naam" value="{{ old('name') }}" required>
-                        <input type="email" name="email" placeholder="E-mail" value="{{ old('email') }}" required>
-                        <textarea name="message" placeholder="Bericht" required>{{ old('message') }}</textarea>
-                        <input type="hidden" name="g-recaptcha-response" value="{{ old('g-recaptcha-response') }}">
-                        <button type="submit">Verstuur</button>
-                    </form>
+                        <form id="contact" method="post" action="{{ route('contact.send') }}" data-recaptcha-site-key="{{ $recaptchaSiteKey }}">
+                            @csrf
+                            <input type="text" name="name" placeholder="Naam" value="{{ old('name') }}" required>
+                            <input type="email" name="email" placeholder="E-mail" value="{{ old('email') }}" required>
+                            <textarea name="message" placeholder="Bericht" required>{{ old('message') }}</textarea>
+                            <input type="hidden" name="g-recaptcha-response" value="{{ old('g-recaptcha-response') }}">
+                            <button type="submit">Verstuur</button>
+                        </form>
+                    </div>
                 </div>
         </section>
     </main>
