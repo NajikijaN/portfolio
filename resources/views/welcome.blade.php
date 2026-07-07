@@ -90,7 +90,7 @@
                 Hoi, ik ben <br>
                 <span class="text-gradient">Kijan van Ginkel.</span>
             </h1>
-            <p>Web Developer Front-end | Back-end
+            <p>Web Developer Front-end | Back-end</p>
                 <div class="social-icons">
                     <div class="social-icon">
                         <a href="https://github.com/NajikijaN" target="_blank" rel="noreferrer">
@@ -100,11 +100,9 @@
                     <div class="social-icon">
                         <a href="https://www.linkedin.com/in/kijan-van-ginkel-867353226/" target="_blank" rel="noreferrer">
                             <i class="fab fa-linkedin fa-lg"></i>
-
                         </a>
                     </div>
                 </div>
-            </p>
         </div>
         <div class="ascii-container text-gradient">
             <?php
@@ -207,19 +205,12 @@
                                     <div class="ide-line">
                                         <span class="ide-number">3</span>
                                         <div class="experience-item">
-                                            <h3>Klantproject</h3>
-                                            <a href="https://bbdeoudenude.nl" target="_blank">B&B De Oude Nude <i class="fa-solid fa-link"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="ide-line">
-                                        <span class="ide-number">4</span>
-                                        <div class="experience-item">
                                             <h3>Kunstproject</h3>
-                                            <a href="https://paulenerna.nl" target="_blank">paulenerna.nl <i class="fa-solid fa-link"></i></span></a>
+                                            <a href="https://paulenerna.nl" target="_blank">paulenerna.nl <i class="fa-solid fa-link"></i></a>
                                         </div>
                                     </div>
                                     <div class="ide-line ide-cursor-line">
-                                        <span class="ide-number">5</span>
+                                        <span class="ide-number">4</span>
                                         <span class="typewriter"></span>
                                     </div>
                                 </div>

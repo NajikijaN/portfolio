@@ -3,20 +3,15 @@ import 'toastify-js/src/toastify.css';
 import Toastify from 'toastify-js';
 
 if (window.toastifyMessage) {
+    const toastType = window.toastifyType === 'success' ? 'success' : 'error';
+
     Toastify({
         text: window.toastifyMessage,
-        duration: 3000,
+        duration: 4500,
         close: true,
         gravity: 'top',
         position: 'right',
-        backgroundColor: window.toastifyType === 'success'
-            ? 'linear-gradient(90deg, #49893D, #88C77C)'
-            : 'linear-gradient(90deg, #893D3D, #C77C7C)',
-        style: {
-            borderRadius: '8px',
-            boxShadow: '0 2px 12px rgba(0,0,0,0.12)',
-            color: '#fff',
-        },
+        className: `portfolio-toast portfolio-toast--${toastType}`,
         stopOnFocus: true,
     }).showToast();
 }

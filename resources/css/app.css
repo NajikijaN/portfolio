@@ -442,6 +442,87 @@ header p {
     background: linear-gradient(270deg, #010105, #44111C);
 }
 
+.toastify.portfolio-toast {
+    --toast-accent: var(--primary-color);
+    --toast-accent-soft: rgba(196, 29, 85, 0.18);
+
+    display: grid;
+    grid-template-columns: 0.35rem minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.9rem;
+    width: min(26rem, calc(100vw - 2rem));
+    padding: 1rem 1rem 1rem 0;
+    color: #f8fafc;
+    background:
+        linear-gradient(145deg, rgba(20, 20, 24, 0.96), rgba(18, 5, 11, 0.92)),
+        radial-gradient(circle at top right, var(--toast-accent-soft), transparent 40%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 0;
+    border-radius: 1rem;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38), 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    backdrop-filter: blur(18px);
+}
+
+.toastify.portfolio-toast::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    min-height: 3.25rem;
+    border-radius: 1rem 0 0 1rem;
+    background: var(--toast-accent);
+    box-shadow: 0 0 22px var(--toast-accent-soft);
+}
+
+.toastify.portfolio-toast--success {
+    --toast-accent: #2fb36d;
+    --toast-accent-soft: rgba(47, 179, 109, 0.22);
+}
+
+.toastify.portfolio-toast--error {
+    --toast-accent: #f05267;
+    --toast-accent-soft: rgba(240, 82, 103, 0.22);
+}
+
+.toastify.portfolio-toast .toast-close {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border-radius: 999px;
+    color: #f8fafc;
+    background: rgba(255, 255, 255, 0.08);
+    font-size: 0;
+    opacity: 1;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.toastify.portfolio-toast .toast-close::before,
+.toastify.portfolio-toast .toast-close::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.85rem;
+    height: 0.12rem;
+    border-radius: 999px;
+    background: #ffffff;
+}
+
+.toastify.portfolio-toast .toast-close::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.toastify.portfolio-toast .toast-close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.toastify.portfolio-toast .toast-close:hover {
+    background: rgba(255, 255, 255, 0.16);
+    transform: scale(1.04);
+}
+
 footer {
     @apply text-center text-sm text-slate-500 py-4;
 }
@@ -548,6 +629,13 @@ footer {
 }
 
 @media (max-width: 640px) {
+    .toastify.portfolio-toast {
+        right: 1rem !important;
+        left: 1rem !important;
+        width: auto;
+        max-width: none;
+    }
+
     body {
         margin: 0 1.25rem;
     }
