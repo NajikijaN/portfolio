@@ -29,20 +29,45 @@ const descriptions = {
 };
 
 if (buttons.length > 0 && descriptionElement) {
+    let isProjectSwitching = false;
+    const shouldReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const switchDelay = shouldReduceMotion ? 0 : 180;
+
     buttons.forEach(button => {
         button.addEventListener('click', () => {
+            if (button.classList.contains('active') || isProjectSwitching) {
+                return;
+            }
+
+            isProjectSwitching = true;
+
             buttons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
             const project = button.getAttribute('data-project');
-            projectLinks.forEach(link => link.classList.remove('active'));
+            const currentProjectLink = document.querySelector('.project-link.active');
+            currentProjectLink?.classList.add('is-exiting');
+            descriptionElement.classList.add('is-switching');
 
-            const activeProjectLink = document.querySelector(`.project-link[data-project="${project}"]`);
-            if (activeProjectLink) {
-                activeProjectLink.classList.add('active');
-            }
+            window.setTimeout(() => {
+                projectLinks.forEach(link => {
+                    link.classList.remove('active', 'is-exiting', 'is-entering');
+                });
 
-            descriptionElement.textContent = descriptions[project] || '';
+                const activeProjectLink = document.querySelector(`.project-link[data-project="${project}"]`);
+
+                if (activeProjectLink) {
+                    activeProjectLink.classList.add('active', 'is-entering');
+                }
+
+                descriptionElement.textContent = descriptions[project] || '';
+
+                window.requestAnimationFrame(() => {
+                    activeProjectLink?.classList.remove('is-entering');
+                    descriptionElement.classList.remove('is-switching');
+                    isProjectSwitching = false;
+                });
+            }, switchDelay);
         });
     });
 }

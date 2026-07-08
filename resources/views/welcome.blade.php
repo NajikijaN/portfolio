@@ -91,6 +91,11 @@
                 <span class="text-gradient">Kijan van Ginkel.</span>
             </h1>
             <p>Web Developer Front-end | Back-end</p>
+            <a class="hero-command" href="#contact-container" aria-label="Ga naar het contactformulier">
+                <span class="hero-command-prompt" aria-hidden="true">&gt;</span>
+                <span>bespreek je idee</span>
+                <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+            </a>
                 <div class="social-icons">
                     <div class="social-icon">
                         <a href="https://github.com/NajikijaN" target="_blank" rel="noreferrer">
@@ -128,28 +133,32 @@
                 <p>Ik ben Kijan van Ginkel, 17 jaar oud en woon op de Utrechtse Heuvelrug. Ik ben een Web Developer met
                     ervaring in zowel front-end als back-end ontwikkeling, momenteel in opleiding. Buiten mijn studie
                     werk ik veel aan het verbeteren van mijn vaardigheden en het ontwikkelen van nieuwe projecten.
-                    Bekijk hieronder enkele van mijn projecten:</p>
+                    Bekijk hieronder een selectie van mijn werk:</p>
                 <div class="project-container">
                     <a class="project-link active" data-project="viewsource" href="http://viewsource.najik.dev"
                         target="_blank" rel="noreferrer">
                         <div>
                             <img src="viewsource.png" alt="viewsource">
+                            <span class="project-link-badge">Bekijk case <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
                         </div>
                     </a>
                     <a class="project-link" data-project="nude" href="https://bbdeoudenude.nl" target="_blank"
                         rel="noreferrer">
                         <div>
                             <img src="bb.png" alt="nude">
+                            <span class="project-link-badge">Bekijk case <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
                         </div>
                     </a>
                     <a class="project-link" data-project="hollandica" href="https://hollandicabv.nl" target="_blank" rel="noreferrer">
                         <div>
                             <img src="hollandica.png" alt="hollandica">
+                            <span class="project-link-badge">Bekijk case <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
                         </div>
                     </a>
                     <a class="project-link" data-project="avontuuramerongen" href="https://avontuuramerongen.nl" target="_blank" rel="noreferrer">
                         <div>
                             <img src="avontuuramerongen.png" alt="avontuuramerongen">
+                            <span class="project-link-badge">Bekijk case <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
                         </div>
                     </a>
                     <div class="project-sidebar">
@@ -220,7 +229,7 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section id="contact-container">
             <div class="container">
                 <h2>Contact <span class="text-gradient">mij.</span></h2>
                 <p>Heb je een vraag, een projectidee of zoek je een developer? Ik sta open voor nieuwe uitdagingen en
