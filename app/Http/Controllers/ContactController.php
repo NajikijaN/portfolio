@@ -34,14 +34,14 @@ class ContactController extends Controller
             $mail->send();
         } catch (PHPMailerException $exception) {
             report($exception);
-            header('Location: '.route('welcome').'#contact');
+            header('Location: '.route('welcome').'#contact-container');
 
             return back()
                 ->withInput()
                 ->with('error', 'Er is een fout opgetreden bij het verzenden van je bericht. Probeer het later opnieuw.');
 
         }
-        header('Location: '.route('welcome').'#contact');
+        header('Location: '.route('welcome').'#contact-container');
 
         return back()->with('success', 'Je bericht is verzonden. Ik neem snel contact met je op.');
     }
